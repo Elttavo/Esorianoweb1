@@ -1,0 +1,10 @@
+E:\EsorianoWeb\ClassLibrary1\bin\Release\ClassLibrary1.dll
+E:\EsorianoWeb\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+E:\EsorianoWeb\ClassLibrary1\bin\Release\ClassLibrary1.xml
+E:\EsorianoWeb\ClassLibrary1\obj\Release\ClassLibrary1.vbprojAssemblyReference.cache
+E:\EsorianoWeb\ClassLibrary1\obj\Release\ClassLibrary1.Resources.resources
+E:\EsorianoWeb\ClassLibrary1\obj\Release\ClassLibrary1.vbproj.GenerateResource.cache
+E:\EsorianoWeb\ClassLibrary1\obj\Release\ClassLibrary1.vbproj.CoreCompileInputs.cache
+E:\EsorianoWeb\ClassLibrary1\obj\Release\ClassLibrary1.dll
+E:\EsorianoWeb\ClassLibrary1\obj\Release\ClassLibrary1.xml
+E:\EsorianoWeb\ClassLibrary1\obj\Release\ClassLibrary1.pdb
