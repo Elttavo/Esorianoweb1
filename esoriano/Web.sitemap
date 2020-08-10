@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="" title="ESoriano"  description="WebSite Enrique Soriano">
+		<siteMapNode url="~/Default.aspx" title="Inicio"  description="Enrique Soriano"/>
+		<siteMapNode url="~/empresa.aspx" title="Empresa"  description="Empresa" />
+		<!--<siteMapNode url="~/productos.aspx" title="Productos"  description="Productos" />-->
+		<siteMapNode url="~/servicios.aspx" title="Servicios"  description="Servicios" />
+		<!--<siteMapNode url="~/pedidos.aspx" title="Pedidos"  description="Pedidos" />
+    <siteMapNode url="~/ped_gens.aspx" title="Pedido Generado"  description="Pedidos Generado" />
+    <siteMapNode url="~/borrad_gen.aspx" title="Pedido Actual"  description="Pedidos Actual" />
+    <siteMapNode url="~/cons-pago.aspx" title="Condición de Pagos"  description="Condición de Pagos" />
+    <siteMapNode url="~/borrad-pedido.aspx" title="Borradores de Pedidos"  description="Borradores de Pedidos" />
+    <siteMapNode url="~/ver-pedido.aspx" title="Orden de Pedido"  description="Orden de Pedido" />
+    <siteMapNode url="~/cons-pedido.aspx" title="Consultar Pedidos Generados"  description="Consultar Pedidos Generados" />-->
+		<siteMapNode url="~/productos-por-rubro.aspx" title="Todos los Rubros"  description="Todos los Rubros" />
+		<siteMapNode url="~/articulos.aspx" title="Todos los Artículos"  description="Todos los Articulos" />
+		<siteMapNode url="~/descargas.aspx" title="Descargas"  description="Descargas" />
+		<siteMapNode url="~/contacto.aspx" title="Contacto"  description="Contacto" />
+		<siteMapNode url="~/mapa.aspx" title="Mapa del Site"  description="Mapa del Site" />
+	</siteMapNode>
+</siteMap>
+

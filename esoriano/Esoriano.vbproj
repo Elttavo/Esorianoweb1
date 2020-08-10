@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{779B6083-C7A9-41A7-AE47-3AADCCCC34E6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Esoriano</RootNamespace>
+    <AssemblyName>Esoriano</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Esoriano.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Esoriano.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="admin\AbmNovedades.aspx" />
+    <Content Include="admin\AdministracionNovedades.aspx" />
+    <Content Include="admin\Archivos.aspx" />
+    <Content Include="admin\Default.aspx" />
+    <Content Include="admin\Descarga.aspx" />
+    <Content Include="admin\Exportacion.aspx" />
+    <Content Include="admin\Imagenes\administracion\images\agregar_novedad.png" />
+    <Content Include="admin\Imagenes\administracion\images\descarga %281%29.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_01.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_02.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_03.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_04.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_05.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_06.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_07.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\menues_08.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\regresar.png" />
+    <Content Include="admin\Imagenes\archivos\ajax-loader.gif" />
+    <Content Include="admin\Imagenes\archivos\factura.jpg" />
+    <Content Include="admin\Imagenes\archivos\menues_art.jpg" />
+    <Content Include="admin\Imagenes\archivos\menues_atraz.jpg" />
+    <Content Include="admin\Imagenes\archivos\menues_cli_seg.jpg" />
+    <Content Include="admin\Imagenes\archivos\menues_list.jpg" />
+    <Content Include="admin\Imagenes\archivos\menues_ru.jpg" />
+    <Content Include="admin\Imagenes\archivos\menues_sub.jpg" />
+    <Content Include="admin\Imagenes\archivos\menues_uni.jpg" />
+    <Content Include="admin\Imagenes\archivos\vendedores.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\01.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\02.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\03.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\04.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\05.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\06.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\boton_ep.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\boton_rppn.jpg" />
+    <Content Include="admin\Imagenes\exportacion\botones\upload.jpg" />
+    <Content Include="admin\Imagenes\exportacion\images\Menues07.jpg" />
+    <Content Include="admin\Imagenes\exportacion\images\menues_01.jpg" />
+    <Content Include="admin\Imagenes\exportacion\images\menues_02.jpg" />
+    <Content Include="admin\Imagenes\exportacion\images\menues_03.jpg" />
+    <Content Include="admin\Imagenes\exportacion\images\menues_04.jpg" />
+    <Content Include="admin\Imagenes\exportacion\images\menues_05.jpg" />
+    <Content Include="admin\Imagenes\exportacion\images\menues_06.jpg" />
+    <Content Include="admin\Inicio.aspx" />
+    <Content Include="admin\VerPedidoA.aspx" />
+    <Content Include="admin\WebControl\WebUserControlNavAdm.ascx" />
+    <Content Include="Captcha.aspx" />
+    <Content Include="img\about\avatar.jpg" />
+    <Content Include="ConBorrador.aspx" />
+    <Content Include="ConPedidoGen.aspx" />
+    <Content Include="ConsConVent.aspx" />
+    <Content Include="ConsFactura.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\lib\prototype.js" />
+    <Content Include="Content\lib\SimpleHorizontalScroll.js" />
+    <Content Include="Content\scr\builder.js" />
+    <Content Include="Content\scr\controls.js" />
+    <Content Include="Content\scr\dragdrop.js" />
+    <Content Include="Content\scr\effects.js" />
+    <Content Include="Content\scr\scriptaculous.js" />
+    <Content Include="Content\scr\slider.js" />
+    <Content Include="Content\scr\sound.js" />
+    <Content Include="Content\scr\unittest.js" />
+    <Content Include="Content\scr\_notes\dwsync.xml" />
+    <Content Include="css\modern-business.css" />
+    <Content Include="css\prof.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Descargas.aspx" />
+    <Content Include="DetalleNovedad.aspx" />
+    <Content Include="DetalleNovedadAgrandada.aspx" />
+    <Content Include="GeneraPedido.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="img\about\avatar003.jpg" />
+    <Content Include="img\about\avatar01.jpg" />
+    <Content Include="img\about\avatar02.jpg" />
+    <Content Include="img\servicios\logos ES horizontal txt negro.png" />
+    <Content Include="img\cabecera\cabezal grande.jpg" />
+    <Content Include="img\cabecera\cabezalchico1.jpg" />
+    <Content Include="img\cabecera\cabezalchico2.jpg" />
+    <Content Include="img\cabecera\cabezalchico3.jpg" />
+    <Content Include="img\cabecera\cabezalchico4.jpg" />
+    <Content Include="img\correo\correoenv.jpg" />
+    <Content Include="img\correo\correos.jpeg" />
+    <Content Include="img\default\essametLineas.jpg" />
+    <Content Include="img\default\expendedor.jpg" />
+    <Content Include="img\default\kolnLineas.jpg" />
+    <Content Include="img\default\logoEsorian2o.jpg" />
+    <Content Include="img\default\logoEsoriano370x200.jpg" />
+    <Content Include="img\default\metzLineas.jpg" />
+    <Content Include="img\default\plena.Lineasjpg.jpg" />
+    <Content Include="img\default\prollLineas.jpg" />
+    <Content Include="img\default\rheinLineas.jpg" />
+    <Content Include="img\descargas\Instructivo.jpg" />
+    <Content Include="img\rubros\ABRASIVOS.jpg" />
+    <Content Include="img\rubros\ALICATES.jpg" />
+    <Content Include="img\rubros\BOCALLAVES.jpg" />
+    <Content Include="img\rubros\CANDADOS.jpg" />
+    <Content Include="img\rubros\CEPILLOS.jpg" />
+    <Content Include="img\rubros\CINCEL.jpg" />
+    <Content Include="img\rubros\CINTASM.jpg" />
+    <Content Include="img\rubros\DESTORNILLADORES.jpg" />
+    <Content Include="img\rubros\DISCOS.jpg" />
+    <Content Include="img\rubros\LIMAS.jpg" />
+    <Content Include="img\rubros\LLAVES.jpg" />
+    <Content Include="img\rubros\MACHOS .jpg" />
+    <Content Include="img\rubros\MECHAS.jpg" />
+    <Content Include="img\rubros\MOSQUETONES.jpg" />
+    <Content Include="img\rubros\PASADORES.jpg" />
+    <Content Include="img\rubros\PINCELES.jpg" />
+    <Content Include="img\rubros\PINZAS.jpg" />
+    <Content Include="img\rubros\PUNTAS.jpg" />
+    <Content Include="img\rubros\SIERRAS.jpg" />
+    <Content Include="img\rubros\tenazas.jpg" />
+    <Content Include="img\rubros\Tree_Flecha.gif" />
+    <Content Include="img\rubros\Tree_Flecha4.gif" />
+    <Content Include="img\rubros\Tree_Flecha5.gif" />
+    <Content Include="img\rubros\v-mas.gif" />
+    <Content Include="img\rubros\v-menos.gif" />
+    <Content Include="img\rubros\vineta2.gif" />
+    <Content Include="img\rubros\vineta_princ.gif" />
+    <Content Include="img\rubros\vineta_sec.gif" />
+    <Content Include="img\rubros\vv-menos.gif" />
+    <Content Include="img\servicios\interconectados.jpg" />
+    <Content Include="img\variado\01.jpg" />
+    <Content Include="img\variado\010.jpg" />
+    <Content Include="img\variado\012.jpg" />
+    <Content Include="img\variado\02.jpg" />
+    <Content Include="img\variado\020.jpg" />
+    <Content Include="img\variado\022.jpg" />
+    <Content Include="img\variado\03.jpg" />
+    <Content Include="img\variado\030.jpg" />
+    <Content Include="img\variado\032.jpg" />
+    <Content Include="img\variado\04.jpg" />
+    <Content Include="img\variado\040.jpg" />
+    <Content Include="img\variado\042.jpg" />
+    <Content Include="img\variado\05.jpg" />
+    <Content Include="img\variado\050.jpg" />
+    <Content Include="img\variado\052.jpg" />
+    <Content Include="img\variado\06.jpg" />
+    <Content Include="img\variado\060.jpg" />
+    <Content Include="img\variado\062.jpg" />
+    <Content Include="img\variado\07.jpg" />
+    <Content Include="img\variado\070.jpg" />
+    <Content Include="img\variado\072.jpg" />
+    <Content Include="img\variado\08.jpg" />
+    <Content Include="img\variado\082.jpg" />
+    <Content Include="img\variado\092.jpg" />
+    <Content Include="img\about\a1.png" />
+    <Content Include="img\about\a12.png" />
+    <Content Include="img\about\a2.jpg" />
+    <Content Include="img\about\a3.jpg" />
+    <Content Include="img\about\a4.jpg" />
+    <Content Include="img\about\a5.jpg" />
+    <Content Include="img\about\a6.jpg" />
+    <Content Include="img\about\a7.jpg" />
+    <Content Include="img\variado\admin-ajax %281%29.jpg" />
+    <Content Include="img\variado\admin-ajax %282%29.jpg" />
+    <Content Include="img\variado\admin-ajax.jpg" />
+    <Content Include="img\variado\b05.png" />
+    <Content Include="img\variado\background.jpg" />
+    <Content Include="img\variado\bandera de España.jpg" />
+    <Content Include="img\variado\bocallaves.jpg" />
+    <Content Include="img\botones\01.jpg" />
+    <Content Include="img\botones\02.jpg" />
+    <Content Include="img\botones\03.jpg" />
+    <Content Include="img\botones\04.jpg" />
+    <Content Include="img\botones\05.jpg" />
+    <Content Include="img\botones\06.jpg" />
+    <Content Include="img\botones\articulos.png" />
+    <Content Include="img\botones\botonera\011.jpg" />
+    <Content Include="img\botones\botonera\012.jpg" />
+    <Content Include="img\botones\botonera\022.jpg" />
+    <Content Include="img\botones\botonera\023.jpg" />
+    <Content Include="img\botones\botonera\033.jpg" />
+    <Content Include="img\botones\botonera\034.jpg" />
+    <Content Include="img\botones\botonera\044.jpg" />
+    <Content Include="img\botones\botonera\045.jpg" />
+    <Content Include="img\botones\botonera\055.jpg" />
+    <Content Include="img\botones\botonera\056.jpg" />
+    <Content Include="img\botones\botonera\066.jpg" />
+    <Content Include="img\botones\botonera\067.jpg" />
+    <Content Include="img\botones\botonera\077.jpg" />
+    <Content Include="img\botones\botonera\078.jpg" />
+    <Content Include="img\botones\botonera\botonera marcas.html" />
+    <Content Include="img\botones\condiciones.png" />
+    <Content Include="img\botones\factura.png" />
+    <Content Include="img\botones\pedido.png" />
+    <Content Include="img\botones\pedidos.png" />
+    <Content Include="img\botones\rubros.png" />
+    <Content Include="img\botones\upload.jpg" />
+    <Content Include="img\cabecera\1desconectar.png" />
+    <Content Include="img\cabecera\2verpedido.png" />
+    <Content Include="img\cabecera\cabeza.jpg" />
+    <Content Include="img\cabecera\cabeza01.jpg" />
+    <Content Include="img\cabecera\cabeza03.jpg" />
+    <Content Include="img\cabecera\cabeza04.jpg" />
+    <Content Include="img\cabecera\cabeza05.jpg" />
+    <Content Include="img\cabecera\cabezach.jpg" />
+    <Content Include="img\cabecera\cabezaPeque.jpg" />
+    <Content Include="img\cabecera\carro.gif" />
+    <Content Include="img\cabecera\fondocabecera.jpg" />
+    <Content Include="img\cabecera\fondocabecera1.jpg" />
+    <Content Include="img\cabecera\logo.jpg" />
+    <Content Include="img\cabecera\sep.gif" />
+    <Content Include="img\cabecera\Soriano_circulo.jpg" />
+    <Content Include="img\variado\bprint_detalle_pedido.jpg" />
+    <Content Include="img\variado\cajaexpendedora.jpg" />
+    <Content Include="img\variado\candados proll.jpg" />
+    <Content Include="img\about\candados.jpg" />
+    <Content Include="img\variado\cargaydescargaarg.jpg" />
+    <Content Include="img\default\home_banner_k_3 .jpg" />
+    <Content Include="img\default\home_banner_e_1.jpg" />
+    <Content Include="img\default\home_banner_e_2.jpg" />
+    <Content Include="img\default\home_banner_e_3.jpg" />
+    <Content Include="img\default\home_banner_p_1.jpg" />
+    <Content Include="img\default\home_banner_r_1.jpg" />
+    <Content Include="img\default\home_banner_r_2.jpg" />
+    <Content Include="img\default\home_banner_r_3.jpg" />
+    <Content Include="img\descargas\Catalogo.jpg" />
+    <Content Include="img\catalogo\catalogo.jpg" />
+    <Content Include="img\variado\celular.jpeg" />
+    <Content Include="img\variado\CINCEL.jpg" />
+    <Content Include="img\contacto\contacto-1-300x91.jpg" />
+    <Content Include="img\variado\Destornilladores.jpg" />
+    <Content Include="img\about\destornilladores3.jpg" />
+    <Content Include="img\variado\distribucion-image.jpg" />
+    <Content Include="img\descargas\downloadapp.jpg" />
+    <Content Include="img\ecommers\ecommerce.jpg" />
+    <Content Include="img\ecommers\fingerprint.jpg" />
+    <Content Include="img\about\empresa.jpg" />
+    <Content Include="img\default\essamet.jpg" />
+    <Content Include="img\porfolio\essamet1.jpg" />
+    <Content Include="img\porfolio\essamet2.jpg" />
+    <Content Include="img\porfolio\essamet3.jpg" />
+    <Content Include="img\default\expendedores.jpg" />
+    <Content Include="img\footer\face.jpg" />
+    <Content Include="img\footer\footer_facebook.png" />
+    <Content Include="img\footer\footer_gplus.png" />
+    <Content Include="img\footer\footer_twitter.png" />
+    <Content Include="img\footer\footer_youtube.png" />
+    <Content Include="img\servicios\garantia.jpg" />
+    <Content Include="img\variado\home proll.jpg" />
+    <Content Include="img\variado\home.jpg" />
+    <Content Include="img\variado\homer.jpg" />
+    <Content Include="img\variado\homer.png" />
+    <Content Include="img\default\home_banner_m_1.jpg" />
+    <Content Include="img\default\home_banner_m_2.jpg" />
+    <Content Include="img\default\home_banner_m_3.jpg" />
+    <Content Include="img\variado\images.jpg" />
+    <Content Include="img\variado\inst.jpg" />
+    <Content Include="img\default\koln.jpg" />
+    <Content Include="img\porfolio\koln1.jpg" />
+    <Content Include="img\porfolio\koln2.jpg" />
+    <Content Include="img\porfolio\koln3.jpg" />
+    <Content Include="img\variado\limas.jpg" />
+    <Content Include="img\descargas\Listas.jpg" />
+    <Content Include="img\contacto\llamando.jpg" />
+    <Content Include="img\variado\loading.gif" />
+    <Content Include="img\variado\logoE.jpg" />
+    <Content Include="img\variado\logoE.png" />
+    <Content Include="img\default\logoEsoriano.jpg" />
+    <Content Include="img\variado\logoK.jpg" />
+    <Content Include="img\variado\logoK.png" />
+    <Content Include="img\variado\logoM.jpg" />
+    <Content Include="img\variado\logoP.jpg" />
+    <Content Include="img\variado\logoP.png" />
+    <Content Include="img\variado\logoPR.jpg" />
+    <Content Include="img\variado\logoPR.png" />
+    <Content Include="img\variado\logoR.jpg" />
+    <Content Include="img\variado\logoR.png" />
+    <Content Include="img\variado\logo_nav %281%29.png" />
+    <Content Include="img\variado\logo_nav.png" />
+    <Content Include="img\variado\machos.jpg" />
+    <Content Include="img\servicios\Mapa-distribucion.jpg" />
+    <Content Include="img\variado\mas-info-icon.png" />
+    <Content Include="img\servicios\mejor_servicio.jpg" />
+    <Content Include="img\default\metz.jpg" />
+    <Content Include="img\porfolio\metz1.jpg" />
+    <Content Include="img\porfolio\metz2.jpg" />
+    <Content Include="img\porfolio\metz3.jpg" />
+    <Content Include="img\variado\metzherramientas.jpg" />
+    <Content Include="img\variado\noved.jpeg" />
+    <Content Include="img\variado\novedades.png" />
+    <Content Include="img\novedades\vineta2.gif" />
+    <Content Include="img\novedades\vineta_sec.gif" />
+    <Content Include="img\default\plena.jpg" />
+    <Content Include="img\porfolio\plena1.jpg" />
+    <Content Include="img\porfolio\plena2.jpg" />
+    <Content Include="img\porfolio\plena3.jpg" />
+    <Content Include="img\default\proll.jpg" />
+    <Content Include="img\porfolio\proll1.jpg" />
+    <Content Include="img\porfolio\proll2.jpg" />
+    <Content Include="img\porfolio\proll3.jpg" />
+    <Content Include="img\default\rhein yard.jpg" />
+    <Content Include="img\default\rhein.png" />
+    <Content Include="img\porfolio\rhein1.jpg" />
+    <Content Include="img\porfolio\rhein2.jpg" />
+    <Content Include="img\porfolio\rhein3.jpg" />
+    <Content Include="img\servicios\servicios_1-300x199.jpg" />
+    <Content Include="img\about\SierraC.jpg" />
+    <Content Include="img\variado\Soriano_circulo.jpg" />
+    <Content Include="img\variado\th.jpg" />
+    <Content Include="js\contact_me.js" />
+    <Content Include="js\jqBootstrapValidation.js" />
+    <Content Include="Novedades.aspx" />
+    <Content Include="NovedadesTodas.aspx" />
+    <Content Include="Pedidos.aspx" />
+    <Content Include="PedidoTerminado.aspx" />
+    <Content Include="RubroCelu.aspx" />
+    <Content Include="ProductoRubro.aspx" />
+    <Content Include="profolio.aspx" />
+    <Content Include="Rubro.aspx" />
+    <Content Include="ProductoRubroCelu.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="MasterPage\MasterEsorianoLogeado.Master" />
+    <Content Include="Content\scr\javascripttest.rb" />
+    <Content Include="VerPedido.aspx" />
+    <Content Include="Video.aspx" />
+    <Content Include="WebRepositorio\Esoriano\Datos\CLIENTE.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\FACTURAS.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\LISTA.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\OFERTAS.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\Pedido.txt" />
+    <Content Include="WebRepositorio\Esoriano\Datos\Pedido1.txt" />
+    <Content Include="WebRepositorio\Esoriano\Datos\RUBROS.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\STOCK.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\SUBRUBRO.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\UNIDAD.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Datos\VENDEDORES.TXT" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\07042020.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\0711placa.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\08042020.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\16-04aumento.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\180201 Ajuste precios.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\25-10cinco.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\27-04condiciones_pago.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\28-02-20 screen.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\navidad.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Imagenes\placa.jpg" />
+    <Content Include="WebRepositorio\Esoriano\Promo\PROMO.jpg" />
+    <Content Include="admin\Imagenes\administracion\images\Thumbs.db" />
+    <Content Include="admin\Imagenes\exportacion\botones\Thumbs.db" />
+    <Content Include="admin\Imagenes\exportacion\images\Thumbs.db" />
+    <Content Include="WebRepositorio\Esoriano\Promo\video\Video..mp4" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\porfolio.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="services.aspx" />
+    <Content Include="SubRubroCelu.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebControl\WebUserControlCabecera.ascx" />
+    <Content Include="WebControl\WebUserControlNovedades.ascx" />
+    <Content Include="WebControl\WebUserControlNoveSL.ascx" />
+    <Content Include="WebControl\WebUserControlPath.ascx" />
+    <Content Include="Web.sitemap" />
+    <Content Include="WebRepositorio\Esoriano\Catalogo\Esoriano.pdf" />
+    <Content Include="WebRepositorio\Esoriano\Listas\LISTAS1C.XLS" />
+    <Content Include="WebRepositorio\Esoriano\Instructivo\manual.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.designer.vb">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about.aspx.vb">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\AbmNovedades.aspx.designer.vb">
+      <DependentUpon>AbmNovedades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AbmNovedades.aspx.vb">
+      <DependentUpon>AbmNovedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AdministracionNovedades.aspx.designer.vb">
+      <DependentUpon>AdministracionNovedades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\AdministracionNovedades.aspx.vb">
+      <DependentUpon>AdministracionNovedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Archivos.aspx.designer.vb">
+      <DependentUpon>Archivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Archivos.aspx.vb">
+      <DependentUpon>Archivos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\Descarga.aspx.designer.vb">
+      <DependentUpon>Descarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Descarga.aspx.vb">
+      <DependentUpon>Descarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Exportacion.aspx.designer.vb">
+      <DependentUpon>Exportacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Exportacion.aspx.vb">
+      <DependentUpon>Exportacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Inicio.aspx.designer.vb">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Inicio.aspx.vb">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\VerPedidoA.aspx.designer.vb">
+      <DependentUpon>VerPedidoA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\VerPedidoA.aspx.vb">
+      <DependentUpon>VerPedidoA.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\WebControl\WebUserControlNavAdm.ascx.designer.vb">
+      <DependentUpon>WebUserControlNavAdm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\WebControl\WebUserControlNavAdm.ascx.vb">
+      <DependentUpon>WebUserControlNavAdm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha.aspx.designer.vb">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Captcha.aspx.vb">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ConBorrador.aspx.designer.vb">
+      <DependentUpon>ConBorrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConBorrador.aspx.vb">
+      <DependentUpon>ConBorrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConPedidoGen.aspx.designer.vb">
+      <DependentUpon>ConPedidoGen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConPedidoGen.aspx.vb">
+      <DependentUpon>ConPedidoGen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ConsConVent.aspx.designer.vb">
+      <DependentUpon>ConsConVent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsConVent.aspx.vb">
+      <DependentUpon>ConsConVent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsFactura.aspx.designer.vb">
+      <DependentUpon>ConsFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsFactura.aspx.vb">
+      <DependentUpon>ConsFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.vb">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.vb">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Descargas.aspx.designer.vb">
+      <DependentUpon>Descargas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Descargas.aspx.vb">
+      <DependentUpon>Descargas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DetalleNovedad.aspx.designer.vb">
+      <DependentUpon>DetalleNovedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleNovedad.aspx.vb">
+      <DependentUpon>DetalleNovedad.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DetalleNovedadAgrandada.aspx.designer.vb">
+      <DependentUpon>DetalleNovedadAgrandada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleNovedadAgrandada.aspx.vb">
+      <DependentUpon>DetalleNovedadAgrandada.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GeneraPedido.aspx.designer.vb">
+      <DependentUpon>GeneraPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GeneraPedido.aspx.vb">
+      <DependentUpon>GeneraPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\MasterEsoriano.Master.designer.vb">
+      <DependentUpon>MasterEsoriano.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\MasterEsoriano.Master.vb">
+      <DependentUpon>MasterEsoriano.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\MasterEsorianoLogeado.Master.designer.vb">
+      <DependentUpon>MasterEsorianoLogeado.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\MasterEsorianoLogeado.Master.vb">
+      <DependentUpon>MasterEsorianoLogeado.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Novedades.aspx.designer.vb">
+      <DependentUpon>Novedades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Novedades.aspx.vb">
+      <DependentUpon>Novedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NovedadesTodas.aspx.designer.vb">
+      <DependentUpon>NovedadesTodas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NovedadesTodas.aspx.vb">
+      <DependentUpon>NovedadesTodas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pedidos.aspx.designer.vb">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos.aspx.vb">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidoTerminado.aspx.designer.vb">
+      <DependentUpon>PedidoTerminado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidoTerminado.aspx.vb">
+      <DependentUpon>PedidoTerminado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RubroCelu.aspx.designer.vb">
+      <DependentUpon>RubroCelu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RubroCelu.aspx.vb">
+      <DependentUpon>RubroCelu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoRubro.aspx.designer.vb">
+      <DependentUpon>ProductoRubro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoRubro.aspx.vb">
+      <DependentUpon>ProductoRubro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profolio.aspx.designer.vb">
+      <DependentUpon>profolio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profolio.aspx.vb">
+      <DependentUpon>profolio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Rubro.aspx.designer.vb">
+      <DependentUpon>Rubro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rubro.aspx.vb">
+      <DependentUpon>Rubro.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProductoRubroCelu.aspx.designer.vb">
+      <DependentUpon>ProductoRubroCelu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoRubroCelu.aspx.vb">
+      <DependentUpon>ProductoRubroCelu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="services.aspx.designer.vb">
+      <DependentUpon>services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="services.aspx.vb">
+      <DependentUpon>services.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SubRubroCelu.aspx.designer.vb">
+      <DependentUpon>SubRubroCelu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubRubroCelu.aspx.vb">
+      <DependentUpon>SubRubroCelu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="VerPedido.aspx.designer.vb">
+      <DependentUpon>VerPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerPedido.aspx.vb">
+      <DependentUpon>VerPedido.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Video.aspx.designer.vb">
+      <DependentUpon>Video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Video.aspx.vb">
+      <DependentUpon>Video.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlCabecera.ascx.designer.vb">
+      <DependentUpon>WebUserControlCabecera.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlCabecera.ascx.vb">
+      <DependentUpon>WebUserControlCabecera.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlNovedades.ascx.designer.vb">
+      <DependentUpon>WebUserControlNovedades.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlNovedades.ascx.vb">
+      <DependentUpon>WebUserControlNovedades.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlNoveSL.ascx.designer.vb">
+      <DependentUpon>WebUserControlNoveSL.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlNoveSL.ascx.vb">
+      <DependentUpon>WebUserControlNoveSL.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlPath.ascx.designer.vb">
+      <DependentUpon>WebUserControlPath.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControl\WebUserControlPath.ascx.vb">
+      <DependentUpon>WebUserControlPath.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage\MasterEsoriano.Master" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="img\botones\botonera\Thumbs.db" />
+    <Content Include="img\botones\Thumbs.db" />
+    <Content Include="img\variado\debug.log" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.vbproj">
+      <Project>{fd3fb669-6551-442e-8917-2a1f427536b9}</Project>
+      <Name>ClassLibrary1</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\BLL\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49342</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49342/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
